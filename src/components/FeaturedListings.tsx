@@ -15,7 +15,7 @@ const FeaturedListings = () => {
   return (
     <section className="container py-10">
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-foreground">Fresh Listings</h2>
+        <h2 className="font-display text-2xl font-bold text-foreground">Fresh Listings</h2>
         <button className="text-sm font-medium text-primary hover:underline">View all</button>
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
