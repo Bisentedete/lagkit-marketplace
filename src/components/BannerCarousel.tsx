@@ -6,25 +6,25 @@ const banners = [
     id: 1,
     title: "Exclusive Private Sale",
     subtitle: "Up to 70% off on Premium Timepieces",
-    gradient: "from-primary/90 to-primary/60",
+    gradient: "from-primary/80 via-primary/50 to-secondary",
   },
   {
     id: 2,
     title: "Consign Your Luxury Items",
     subtitle: "White-glove service for discerning sellers",
-    gradient: "from-emerald-900 to-emerald-700",
+    gradient: "from-secondary via-accent to-secondary",
   },
   {
     id: 3,
     title: "New Season Collections",
     subtitle: "Discover the latest from top maisons",
-    gradient: "from-violet-900 to-purple-700",
+    gradient: "from-accent via-secondary to-muted",
   },
   {
     id: 4,
     title: "Verified Authenticity",
     subtitle: "Every luxury item authenticated by experts",
-    gradient: "from-blue-900 to-cyan-800",
+    gradient: "from-muted via-accent to-secondary",
   },
 ];
 
