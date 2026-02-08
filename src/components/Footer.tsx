@@ -1,19 +1,20 @@
-import { ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="border-t border-border bg-secondary">
-    <div className="container py-10">
+  <footer className="border-t border-border bg-card">
+    <div className="container py-12">
       <div className="grid gap-8 md:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-2">
-            <ShoppingBag className="h-6 w-6 text-primary" />
+            <div className="flex items-center justify-center h-7 w-7 rounded-lg bg-primary text-primary-foreground font-extrabold text-sm">
+              L
+            </div>
             <span className="text-lg font-extrabold text-foreground">
               Lag<span className="text-primary">kit</span>
             </span>
           </Link>
-          <p className="mt-3 text-sm text-muted-foreground">
-            The marketplace for everything. Buy and sell with confidence.
+          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            The premier marketplace for luxury goods. Buy and sell with confidence.
           </p>
         </div>
         {[
@@ -35,7 +36,7 @@ const Footer = () => (
           </div>
         ))}
       </div>
-      <div className="mt-8 border-t border-border pt-6 text-center text-xs text-muted-foreground">
+      <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
         © 2026 Lagkit. All rights reserved.
       </div>
     </div>

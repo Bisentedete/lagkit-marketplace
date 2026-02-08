@@ -31,13 +31,14 @@ const ListingCard = ({ title, price, location, image, timeAgo, likes = 0, seller
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
       <div className="p-3">
         <div className="flex items-center justify-between">
-          <p className="text-lg font-bold text-foreground">₱{price.toLocaleString()}</p>
+          <p className="text-lg font-bold text-primary">₱{price.toLocaleString()}</p>
           <button
             onClick={handleLike}
-            className="flex items-center gap-1 rounded-full px-1.5 py-0.5 text-xs transition hover:bg-muted"
+            className="flex items-center gap-1 rounded-full px-1.5 py-0.5 text-xs transition hover:bg-secondary"
           >
             <Heart
               className={`h-3.5 w-3.5 transition ${liked ? "fill-primary text-primary" : "text-muted-foreground"}`}
@@ -56,7 +57,7 @@ const ListingCard = ({ title, price, location, image, timeAgo, likes = 0, seller
           <div className="flex items-center gap-1.5">
             <Avatar className="h-5 w-5">
               <AvatarImage src={sellerAvatar} alt={sellerName} />
-              <AvatarFallback className="text-[10px] bg-muted">{sellerName.charAt(0).toUpperCase()}</AvatarFallback>
+              <AvatarFallback className="text-[10px] bg-secondary text-secondary-foreground">{sellerName.charAt(0).toUpperCase()}</AvatarFallback>
             </Avatar>
             <span className="text-xs text-muted-foreground truncate max-w-[80px]">{sellerName}</span>
           </div>
