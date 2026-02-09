@@ -21,7 +21,7 @@ const FeaturedCategories = () => {
         {categories.map((cat) => (
           <Link
             key={cat.name}
-            to={`/?category=${cat.slug}`}
+            to={`/category/${cat.slug}`}
             className="group relative overflow-hidden rounded-xl card-shadow transition-all duration-300 hover:card-shadow-hover hover:-translate-y-1"
           >
             <div className="aspect-square overflow-hidden">
