@@ -1,32 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const banners = [
-  {
-    id: 1,
-    title: "Flash Sale Weekend",
-    subtitle: "Up to 70% off on Electronics",
-    gradient: "from-primary to-orange-400",
-  },
-  {
-    id: 2,
-    title: "Sell Your Pre-loved Items",
-    subtitle: "List for free and reach thousands of buyers",
-    gradient: "from-emerald-500 to-teal-400",
-  },
-  {
-    id: 3,
-    title: "New Arrivals in Fashion",
-    subtitle: "Discover trending styles this season",
-    gradient: "from-violet-500 to-purple-400",
-  },
-  {
-    id: 4,
-    title: "Verified Sellers Program",
-    subtitle: "Shop with confidence from trusted sellers",
-    gradient: "from-blue-500 to-cyan-400",
-  },
-];
+import { Link } from "react-router-dom";
+import { banners } from "@/data/mockData";
 
 const BannerCarousel = () => {
   const [current, setCurrent] = useState(0);
@@ -52,19 +27,19 @@ const BannerCarousel = () => {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {banners.map((banner) => (
-            <div
+            <Link
               key={banner.id}
-              className={`flex min-w-full flex-col items-center justify-center bg-gradient-to-r ${banner.gradient} px-8 py-12 text-center md:py-16`}
+              to={`/promo/${banner.slug}`}
+              className={`flex min-w-full flex-col items-center justify-center bg-gradient-to-r ${banner.gradient} px-8 py-12 text-center md:py-16 cursor-pointer`}
             >
               <h3 className="text-2xl font-bold text-primary-foreground md:text-3xl">
                 {banner.title}
               </h3>
               <p className="mt-2 text-primary-foreground/80">{banner.subtitle}</p>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Arrows */}
         <button
           onClick={prev}
           className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 text-foreground shadow-md backdrop-blur transition hover:bg-background"
@@ -78,7 +53,6 @@ const BannerCarousel = () => {
           <ChevronRight className="h-5 w-5" />
         </button>
 
-        {/* Dots */}
         <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
           {banners.map((_, i) => (
             <button

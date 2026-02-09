@@ -41,7 +41,7 @@ const HeroSection = () => {
               <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
             </button>
             {showCatDrop && (
-              <div className="absolute left-0 top-full z-20 mt-1 w-full rounded-lg border border-border bg-background py-1 shadow-lg">
+              <div className="absolute left-0 top-full z-50 mt-1 w-full rounded-lg border border-border bg-background py-1 shadow-lg">
                 {categories.map((c) => (
                   <button
                     key={c}
@@ -68,7 +68,7 @@ const HeroSection = () => {
               <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
             </button>
             {showLocDrop && (
-              <div className="absolute left-0 top-full z-20 mt-1 w-full rounded-lg border border-border bg-background py-1 shadow-lg">
+              <div className="absolute left-0 top-full z-50 mt-1 w-full rounded-lg border border-border bg-background py-1 shadow-lg">
                 {locations.map((l) => (
                   <button
                     key={l}
