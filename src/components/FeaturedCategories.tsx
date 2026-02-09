@@ -16,13 +16,13 @@ const categories = [
 const FeaturedCategories = () => {
   return (
     <section className="container py-10">
-      <h2 className="mb-6 font-display text-2xl font-bold text-foreground">Browse Categories</h2>
+      <h2 className="mb-6 text-2xl font-bold text-foreground">Browse Categories</h2>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
         {categories.map((cat) => (
           <Link
             key={cat.name}
             to={`/?category=${cat.slug}`}
-            className="group relative overflow-hidden rounded-xl border border-border card-shadow transition-all duration-300 hover:card-shadow-hover hover:-translate-y-1"
+            className="group relative overflow-hidden rounded-xl card-shadow transition-all duration-300 hover:card-shadow-hover hover:-translate-y-1"
           >
             <div className="aspect-square overflow-hidden">
               <img
@@ -32,9 +32,9 @@ const FeaturedCategories = () => {
                 loading="lazy"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-3">
-              <h3 className="text-sm font-semibold text-foreground md:text-base">
+              <h3 className="text-sm font-semibold text-primary-foreground md:text-base">
                 {cat.name}
               </h3>
             </div>

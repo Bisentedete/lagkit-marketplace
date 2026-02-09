@@ -4,27 +4,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const banners = [
   {
     id: 1,
-    title: "Exclusive Private Sale",
-    subtitle: "Up to 70% off on Premium Timepieces",
-    gradient: "from-primary/80 via-primary/50 to-secondary",
+    title: "Flash Sale Weekend",
+    subtitle: "Up to 70% off on Electronics",
+    gradient: "from-primary to-orange-400",
   },
   {
     id: 2,
-    title: "Consign Your Luxury Items",
-    subtitle: "White-glove service for discerning sellers",
-    gradient: "from-secondary via-accent to-secondary",
+    title: "Sell Your Pre-loved Items",
+    subtitle: "List for free and reach thousands of buyers",
+    gradient: "from-emerald-500 to-teal-400",
   },
   {
     id: 3,
-    title: "New Season Collections",
-    subtitle: "Discover the latest from top maisons",
-    gradient: "from-accent via-secondary to-muted",
+    title: "New Arrivals in Fashion",
+    subtitle: "Discover trending styles this season",
+    gradient: "from-violet-500 to-purple-400",
   },
   {
     id: 4,
-    title: "Verified Authenticity",
-    subtitle: "Every luxury item authenticated by experts",
-    gradient: "from-muted via-accent to-secondary",
+    title: "Verified Sellers Program",
+    subtitle: "Shop with confidence from trusted sellers",
+    gradient: "from-blue-500 to-cyan-400",
   },
 ];
 
@@ -46,7 +46,7 @@ const BannerCarousel = () => {
 
   return (
     <section className="container py-8">
-      <div className="relative overflow-hidden rounded-2xl border border-border">
+      <div className="relative overflow-hidden rounded-2xl">
         <div
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
@@ -54,36 +54,38 @@ const BannerCarousel = () => {
           {banners.map((banner) => (
             <div
               key={banner.id}
-              className={`flex min-w-full flex-col items-center justify-center bg-gradient-to-r ${banner.gradient} px-8 py-14 text-center md:py-20`}
+              className={`flex min-w-full flex-col items-center justify-center bg-gradient-to-r ${banner.gradient} px-8 py-12 text-center md:py-16`}
             >
-              <h3 className="font-display text-2xl font-bold text-foreground md:text-4xl">
+              <h3 className="text-2xl font-bold text-primary-foreground md:text-3xl">
                 {banner.title}
               </h3>
-              <p className="mt-3 text-muted-foreground md:text-lg">{banner.subtitle}</p>
+              <p className="mt-2 text-primary-foreground/80">{banner.subtitle}</p>
             </div>
           ))}
         </div>
 
+        {/* Arrows */}
         <button
           onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-border bg-card/80 p-2 text-foreground shadow-md backdrop-blur transition hover:bg-card"
+          className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 text-foreground shadow-md backdrop-blur transition hover:bg-background"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
         <button
           onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-border bg-card/80 p-2 text-foreground shadow-md backdrop-blur transition hover:bg-card"
+          className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 text-foreground shadow-md backdrop-blur transition hover:bg-background"
         >
           <ChevronRight className="h-5 w-5" />
         </button>
 
+        {/* Dots */}
         <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
           {banners.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               className={`h-2 rounded-full transition-all ${
-                i === current ? "w-6 bg-primary" : "w-2 bg-foreground/30"
+                i === current ? "w-6 bg-primary-foreground" : "w-2 bg-primary-foreground/40"
               }`}
             />
           ))}
